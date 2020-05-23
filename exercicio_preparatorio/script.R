@@ -171,6 +171,25 @@ attach(dados)
     # Salário
     boxplot(dados$salario, main = "Salário")
     
+    # Idade
+    boxplot(dados$idade, main = "Idade")
+    
+    # Stress
+    boxplot(dados$stress, main = "Stress")
+    
+    
+    # Salário
+    boxplot(dados$salario ~ dados$sexo, main = "Salário") # Sexo
+    boxplot(dados$salario ~ dados$est_civil, main = "Salário") # Estado Civil
+    
+    # Idade
+    boxplot(dados$idade ~ dados$sexo, main = "Idade") # Sexo
+    boxplot(dados$idade ~ dados$est_civil, main = "Idade") # Estado Civil
+    
+    # Stress
+    boxplot(dados$stress ~ dados$sexo, main = "Stress")
+    boxplot(dados$stress ~ dados$est_civil, main = "Stress")
+    
 
 # 11) Considerando a média e o desvio-padrão para as mulheres, verifique qual a probabilidade de uma
 # melhor receber acima do 3º quartil. E qual as chances de um homem? Assuma a distribuição normal
