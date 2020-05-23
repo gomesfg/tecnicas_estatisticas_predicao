@@ -8,7 +8,7 @@ setwd("C:/Users/feeli/Documents/GitHub/tecnicas_estatisticas_predicao/municipios
 # Carregar a Base de Dados
   # Base de Dados Municípios_SC
 municipios <- read.csv("Municipios_SC.csv", header = T, sep = ";", dec = ",")
-attach(municipios)
+attach(municipio)
 
 # Estatisticas Descritivas
 
