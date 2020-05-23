@@ -195,6 +195,31 @@ attach(dados)
 # melhor receber acima do 3º quartil. E qual as chances de um homem? Assuma a distribuição normal
 # para os dados.
 
-
+    # Funções da Distribuição Normal
+    # dnorm() - Gerar a densidade da probabilidade p = (X=x)
+    # pnorm() - Gerar a probabilidade de ocorrência de até um valor x, p(X<=x)
+    # qnorm() - Fornecendo a probabilidade acumulada, retoma o valor que gera ela. 0 <= q <= 1
+    # rnorm() - Gera um vetor de números aleatórios de distribuição normal.
+    
+    # Mulheres
+    Media_Mulher <- mean(dados$salario[dados$sexo == 1]) # Média
+    DesvPad_Mulher <- sd(dados$salario[dados$sexo == 1]) # Desvio Padrão
+    Q3 <- quantile(dados$salario, probs=0.75) # 3º Quartil
+    
+    # Probabilidade de uma mulher receber mais que o terceiro quartil
+    # P(Sal>Q3)=1-P(Sal<=Q3)
+    1-pnorm(Q3, mean = Media_Mulher, sd = DesvPad_Mulher)
+    
+    
+    # Homens
+    Media_Homem <- mean(dados$salario[dados$sexo == 0]) # Média
+    DesvPad_Homem <- sd(dados$salario[dados$sexo == 0]) # Desvio Padrão
+    Q3 <- quantile(dados$salario, probs=0.75) # 3º Quartil
+    
+    # Probabilidade de um homem receber mais que o terceiro quartil
+    # P(Sal>Q3)=1-P(Sal<=Q3)
+    1-pnorm(Q3, mean = Media_Homem, sd = DesvPad_Homem)
+    
+    
 # 12) Considerando a distribuição normal, com a média e o desvio-padrão dos casados, quais as chances
 # do nível de stress de um destes respondentes ser menor do que 50 (metade da escala).
