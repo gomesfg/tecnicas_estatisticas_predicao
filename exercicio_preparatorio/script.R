@@ -223,3 +223,9 @@ attach(dados)
     
 # 12) Considerando a distribuição normal, com a média e o desvio-padrão dos casados, quais as chances
 # do nível de stress de um destes respondentes ser menor do que 50 (metade da escala).
+
+# Probabilida do Stress ser menor que 50 para os casados
+med_cas <- mean(dados$stress[dados$est_civil==1])
+sd_cas <- sd(dados$stress[dados$est_civil==1])
+# probabilidade
+pnorm(50, mean=med_cas, sd=sd_cas)
